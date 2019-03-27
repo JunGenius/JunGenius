@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="mvvmViewModel"
+            type="com.qj.mvvm.MvvmViewModel" />
+
+        <variable
+            name="mvvmAdapter"
+            type="com.qj.mvvm.MvvmTestAdapter" />
+
+        <variable
+            name="linearLayoutManager"
+            type="android.support.v7.widget.LinearLayoutManager" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cardview_light_background"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/include_head_view"
+            layout="@layout/mvvm_home_head" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/girls_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            binding:adapter="@{mvvmAdapter}"
+            binding:layoutManager="@{linearLayoutManager}"/>
+    </LinearLayout>
+
+</layout>

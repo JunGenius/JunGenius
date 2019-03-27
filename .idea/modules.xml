@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JunGenius.iml" filepath="$PROJECT_DIR$/JunGenius.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_common/lib_common.iml" filepath="$PROJECT_DIR$/lib_common/lib_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lib_opensource/lib_opensource.iml" filepath="$PROJECT_DIR$/lib_opensource/lib_opensource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_mvvm/module_mvvm.iml" filepath="$PROJECT_DIR$/module_mvvm/module_mvvm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_retrofit/module_retrofit.iml" filepath="$PROJECT_DIR$/module_retrofit/module_retrofit.iml" />
+    </modules>
+  </component>
+</project>

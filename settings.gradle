@@ -1,0 +1,1 @@
+include ':app', ':lib_common', ':lib_common', ':lib_opensource', ':module_mvvm', ':module_mvvm', ':module_retrofit'

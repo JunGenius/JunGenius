@@ -1,0 +1,121 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode app_versions.version_code
+        versionName app_versions.version_name
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+                includeCompileClasspath = true
+            }
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    compile deps.support.app_compat
+
+    compile deps.support.design
+
+    compile deps.support.cardview
+
+    compile deps.support.constraint
+
+    compile(deps.mikepenz.materialdrawer) {
+        transitive = true
+    }
+
+    compile deps.mikepenz.materialdrawer
+
+    compile deps.mikepenz.material
+
+    compile deps.mikepenz.fontawesome
+
+    compile deps.mikepenz.octicons
+
+    // butterknife
+    compile deps.butterknife.runtime
+
+    // loading dialog
+    compile deps.loading_library
+    //提示框 Toast
+    compile deps.toasty
+    // 颜色
+    compile deps.materialcolors
+    // logger
+    compile deps.qj.logger
+    // 异常捕获
+    compile deps.acra
+    configurations.all {
+        resolutionStrategy.force deps.support.annotations
+    }
+    // ViewModel和LiveData依赖
+    compile deps.lifecycle.extensions
+    annotationProcessor deps.lifecycle.compiler
+    //paging
+    compile deps.arch.paging
+
+    //rxlifecycle
+    compile deps.rxlifecycle.extensions
+    compile deps.rxlifecycle.components
+
+    // 依赖注入
+    compile deps.dagger.runtime
+
+    //tinker的核心库 热修复
+    compile(deps.thinker.android_lib) { changing = true }
+//    annotationProcessor(deps.thinker.android_anno) {
+//        changing = true
+//    }
+
+
+    compile(deps.thinker.android_anno) { changing = true }
+    compile deps.multidex
+
+    // EventBus
+    compile deps.eventbus
+    /**
+     *  数据库 GreenDao
+     */
+    compile deps.greenrobot.greendao
+    compile deps.greenrobot.greendao_generator
+    // 适配
+    compile deps.rudeness
+//    implementation files('libs/tbs_sdk_thirdapp_v3.6.0.1310_43612_sharewithdownload_withoutGame_obfs_20180706_163319.jar')
+
+    // Retrofit + RxJava2
+    compile deps.qj.retrofit_client
+
+    compile deps.luojilab.ddcomponent
+
+    compile deps.alibaba.arouter_api
+
+    compile deps.rxbinding
+
+    compile deps.bindingcollectionadapter
+
+    compile deps.bindingcollectionadapter_recyclerview
+}

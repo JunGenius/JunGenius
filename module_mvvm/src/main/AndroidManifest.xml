@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qj.mvvm" >
+
+    <application
+        android:allowBackup="true"
+        android:supportsRtl="true"
+        android:label="@string/mvvm_app_name">
+
+        <activity
+            android:name=".MvvmActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+    </application>
+
+</manifest>
